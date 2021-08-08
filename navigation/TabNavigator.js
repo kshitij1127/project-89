@@ -12,10 +12,10 @@ const BottomTabNavigator = () => {
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
-          if (route === "Feed") {
+          if (route.name === "Feed") {
             iconName = focused ? "ios-home-outline" : "ios-home";
-          } else if (route === "Post") {
-            iconName = focused ? "ios-paper-outline" : "ios-add";
+          } else if (route.name === "Post") {
+            iconName = focused ? "ios-add-outline" : "ios-add";
           }
 
           return <Ionicons name={iconName} size={size} color={color} />;
