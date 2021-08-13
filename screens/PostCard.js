@@ -1,6 +1,7 @@
 import React from 'react'
-import { StyleSheet, View, Platform } from 'react-native'
+import { StyleSheet, View, Platform, Image, Text } from 'react-native'
 import { RFValue } from 'react-native-responsive-fontsize'
+import Ionicons from 'react-native-vector-icons/Ionicons'
 
 export default class PostCard extends React.Component{
     constructor(props){
@@ -16,13 +17,13 @@ export default class PostCard extends React.Component{
                     </View>
 
                     <View>
-                        <Text style={styles.authorNameText}>{this.props.post.author}</Text>
+                        <Text style={styles.authorNameText}>hello</Text>
                     </View>
                 </View>
 
                 <Image source={require('../assets/post.jpeg')}/>
                 <View style={styles.captionContainer}>
-                    <Text style={styles.captionText}>{this.props.post.caption}</Text>
+                    <Text style={styles.captionText}>hi</Text>
                 </View>
                 <View style={styles.actionContainer}>
                     <View style={styles.likeButton}>
