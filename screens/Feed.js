@@ -41,7 +41,7 @@ export default class Feed extends React.Component {
   }
 
   renderItem = ({ item: card }) => {
-    return <PostCard card={card}/>;
+    return <PostCard card={card} navigation={this.props.navigation}/>;
   };
 
   keyExtractor = (item, index) => {

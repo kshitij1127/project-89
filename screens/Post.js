@@ -11,7 +11,6 @@ let customFonts = {
   "Bubblegum-Sans": require("../assets/fonts/BubblegumSans-Regular.ttf"),
 };
 
-let posts = require("../temp_posts.json");
 
 export default class Post extends React.Component {
   constructor(props) {

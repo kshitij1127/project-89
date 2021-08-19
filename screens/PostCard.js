@@ -6,7 +6,8 @@ import {
   Platform,
   StatusBar,
   Image,
-  Dimensions
+  Dimensions,
+  TouchableOpacity
 } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { RFValue } from "react-native-responsive-fontsize";
@@ -40,6 +41,7 @@ export default class PostCard extends Component {
     } else {
       return (
         <View style={styles.container}>
+          <TouchableOpacity onPress={() => {this.props.navigation.navigate('PictureDetails', {card: this.props.card})}}>
         <View style={styles.cardContainer}>
           <Image
             source={require("../assets/post.jpeg")}
@@ -64,6 +66,7 @@ export default class PostCard extends Component {
             </View>
           </View>
         </View>
+        </TouchableOpacity>
       </View>
       );
     }
