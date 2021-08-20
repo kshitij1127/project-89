@@ -21,8 +21,8 @@ let customFonts = {
 };
 
 export default class PictureDetails extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       fontsLoading: false,
     };
@@ -55,19 +55,19 @@ export default class PictureDetails extends React.Component {
 
           <View style={styles.storyContainer}>
             <ScrollView style={styles.storyCard}>
-              <Image source={require("../assets/image_1.jpg")} />
+              <Image source={require("../assets/image_1.jpg")} style={styles.image} />
               <View style={styles.dataContainer}>
                 <View style={styles.titleTextContainer}>
                   <Text style={styles.storyTitleText}>
-                    {this.props.card.title}
+                    {this.props.route.params.title}
                   </Text>
 
                   <Text style={styles.storyAuthorText}>
-                    {this.props.card.author}
+                    {this.props.route.params.author}
                   </Text>
 
                   <Text style={styles.storyTitleText}>
-                    {this.props.card.description}
+                    {this.props.route.params.description}
                   </Text>
                 </View>
               </View>

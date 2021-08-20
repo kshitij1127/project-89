@@ -2,12 +2,14 @@
     {
         "title": "pic",
         "location": "tropics",
-        "author": "kshitij gudla"
+        "author": "kshitij gudla",
+        "decription": "this is a description"
     },
 
     {
         "title": "pic2",
         "location": "tropics",
-        "author": "kshitij gudla"
+        "author": "kshitij gudla",
+        "decription": "this is a description"
     }
 ]
