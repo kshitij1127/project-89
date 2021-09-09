@@ -7,6 +7,7 @@ import {
   StatusBar,
   Image,
   SafeAreaView,
+  StatusBar,
 } from "react-native";
 
 import * as Font from "expo-font";

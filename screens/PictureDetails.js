@@ -8,6 +8,7 @@ import {
   Image,
   ScrollView,
   Platform,
+  StatusBar,
 } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { RFValue } from "react-native-responsive-fontsize";

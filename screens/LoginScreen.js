@@ -12,6 +12,7 @@ export default class Login extends React.Component{
                     providerData[i].uid === googleUser.getBasicProfile().getId()) {
                     // We don't need to reauth the Firebase connection.
                     return true;
+                    // this is a bit of a hack, but we need to return true. 
                 }
             }
         }
@@ -40,6 +41,8 @@ export default class Login extends React.Component{
                     });
             } else {
                 console.log("User already signed-in Firebase.");
+                console.log(firebaseUser);
+                this.props.navigation.navigate('Home');
             }
         });
     }
