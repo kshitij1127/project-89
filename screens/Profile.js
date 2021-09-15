@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, Switch, SafeAreaView } from "react-native";
+import { StyleSheet, Text, View, Switch, SafeAreaView, StatusBar, Platform } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 import AppLoading from "expo-app-loading";
 import * as Font from "expo-font";
@@ -70,7 +70,7 @@ export default class Profile extends Component {
                 <Image source={require("../assets/logo.png")} style={styles.iconImage}/>
               </View>
               <View style={styles.appTitleTextContainer}>
-                <Text style={this.state.lightTheme ? styles.appTitleTextLight : styles.appTitleText}>Story Telling App</Text>
+                <Text style={this.state.lightTheme ? styles.appTitleTextLight : styles.appTitleText}>Spectagram</Text>
               </View>
             </View>
             <View style={styles.screenContainer}>
