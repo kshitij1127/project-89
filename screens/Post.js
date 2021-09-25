@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, SafeAreaView, Image, Platform, ScrollView, TextInput } from "react-native";
+import { View, Text, StyleSheet, SafeAreaView, Image, Platform, ScrollView, TextInput, Button } from "react-native";
 
 import { RFValue } from "react-native-responsive-fontsize";
 import AppLoading from "expo-app-loading";
@@ -19,6 +19,12 @@ export default class Post extends React.Component {
       fontsLoaded: false,
       previewImage: 'image 1',
       dropdownheight: 40,
+      title: '',
+      description: '',
+      location: '', 
+      post_id: this.props.post.key,
+      lightTheme: true,
+      post_data: this.props.post.value,
     };
   }
 
@@ -29,6 +35,28 @@ export default class Post extends React.Component {
 
   componentDidMount() {
     this.loadFonts();
+  }
+
+  async addPost() {
+    if (this.state.title && this.state.description && this.state.location) {
+      let data = {
+        previewImage: this.state.previewImage,
+        title: this.state.title,
+        description: this.state.description,
+        location: this.state.location,
+        author: firebase.auth().currentUser.displayName,
+        authorId: firebase.auth().currentUser.uid,
+        createdOn: new Date().toString(),
+        likes: 0,
+      }
+
+      await firebase.database().ref('/posts/' + Math.random().toString(36).slice(2)).set(data)
+      .then(function(snapshot){})
+      this.props.setUpdateToTrue();
+      this.props.navigation.navigate('Feed');
+    } else {
+      alert('Please fill in all fields');
+    }
   }
 
   render() {
@@ -157,6 +185,11 @@ export default class Post extends React.Component {
                 placeholderTextColor={"white"}
                 numberOfLines={2}
               />
+              <View>
+                 <Button onPress={() => {
+                  this.addPost();
+                }} title="submit" color={"orange"}/>
+              </View>
             </ScrollView>
           </View>
         </View>
