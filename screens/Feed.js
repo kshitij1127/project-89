@@ -29,6 +29,7 @@ export default class Feed extends React.Component {
     super(props);
     this.state = {
       fontsLoaded: false,
+      posts: '',
     };
   }
 
@@ -48,6 +49,10 @@ export default class Feed extends React.Component {
   keyExtractor = (item, index) => {
     index.toString();
   };
+
+  async fetchPosts() {
+    
+  }
 
   render() {
     if (!this.state.fontsLoaded) {
